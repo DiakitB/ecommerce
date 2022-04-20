@@ -17,7 +17,7 @@ export const UserProvider = ({ children }) => {
         getUsertDocument(user);
       }
       setCurenUser(user);
-    });
+    }); JDHA dLLT FORS
     return unsubcribe;
   }, []);
 

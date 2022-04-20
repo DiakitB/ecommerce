@@ -6,8 +6,13 @@ import { Fragment } from "react";
 import { ReactComponent as CrwnLogo } from "../../assests/crown.svg";
 import { signOutUser } from "../../utils/util";
 import { async } from "@firebase/util";
+import CardIcon from "../../component/card-icon/card-icon.component";
+import CardDropdown from "../../component/card-dropdown/card-dropdown.component";
+import { CartContext } from "../../contexts/cart.context";
+
 const Navigation = () => {
   const { curentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
   console.log(curentUser);
   // const SignOutHandler = async () => {
   //   await signOutUser();
@@ -33,7 +38,9 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
+          <CardIcon />
         </div>
+        {isCartOpen && <CardDropdown />}
       </div>
       <Outlet />
     </Fragment>

@@ -1,3 +1,4 @@
+import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -8,7 +9,16 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  writeBatch,
+  query,
+  getDocs,
+} from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyDOrs1FknAQduaWqLnTe0r_Ou_flrjSssY",
   authDomain: "ecommerce-130ee.firebaseapp.com",
@@ -29,7 +39,33 @@ export const auth = getAuth();
 
 export const singWithGoogle = () => signInWithPopup(auth, provider);
 export const db = getFirestore();
+////
 
+///
+export const addCollectionAndDocument = async (collectionKey, objectsToAdd) => {
+  const collectionRef = collection(db, collectionKey);
+  const batch = writeBatch(db);
+  objectsToAdd.forEach((object) => {
+    const docRef = doc(collectionRef, object.title.toLowerCase());
+    batch.set(docRef, object);
+  });
+  await batch.commit();
+  console.log("Done");
+};
+/////////
+export const getCategoriesAndDocument = async () => {
+  const collectionRef = collection(db, "categories");
+  const q = query(collectionRef);
+  const querySnapShop = await getDocs(q);
+  const categoriesMap = querySnapShop.docs.reduce((acc, docSnapshot) => {
+    const { title, items } = docSnapshot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+  return categoriesMap;
+};
+/////////
+////////
 export const getUsertDocument = async (userAuth, additional = {}) => {
   const userDoc = doc(db, "user", userAuth.uid);
   console.log(userDoc);

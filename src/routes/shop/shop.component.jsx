@@ -9,12 +9,10 @@ const Sali = () => {
   };
   return (
     <div>
-      return (
       <div className="form-style">
         <SingnUpForm />
         <SingInForm />
       </div>
-      );
     </div>
   );
 };

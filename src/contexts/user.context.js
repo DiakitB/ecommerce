@@ -12,7 +12,6 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubcribe = onAuthStateChangedHandler((user) => {
-      console.log(user);
       if (user) {
         getUsertDocument(user);
       }
@@ -23,4 +22,4 @@ export const UserProvider = ({ children }) => {
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
-console.log("hello");
+console.log("working");

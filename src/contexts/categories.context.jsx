@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+// import { addCollectionAndDocument } from "../utils/util.js";
 import { getCategoriesAndDocument } from "../utils/util.js";
 import SHOP_DATA from "../shop-data.js";
 

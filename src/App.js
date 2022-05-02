@@ -6,7 +6,7 @@ import Sali from "./routes/shop/shop.component";
 import ShopPage from "./routes/shop/shopPage.component";
 import CheckOut from "./routes/checkout/checkout.component";
 import ContactForm from "./component/contact-form/contact-form.component";
-
+import "./app.style.scss";
 const App = () => {
   return (
     <div>

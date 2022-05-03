@@ -25,7 +25,7 @@ const Navigation = () => {
   // };
   return (
     <Fragment>
-      <div className={`nav-open ${isActive ? "navigation" : ""}`}>
+      <div className={`navigation ${isActive ? "nav-open" : ""}`}>
         <Link className="logo-container" to="/">
           <CrwnLogo className="logo" />
         </Link>

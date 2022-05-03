@@ -3,4 +3,14 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   row-gap: 40px;
+  margin-top: 100px;
+}
+@media (max-width: 59rem) {
+  .category-containers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    row-gap: 40px;
+    margin-top: 100px;
+  }
 }

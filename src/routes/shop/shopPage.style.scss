@@ -4,11 +4,12 @@
   column-gap: 30px;
   row-gap: 30px;
 }
-// @media (max-width: 1200px) {
-//   .entry {
-//     border: 20px solid blue;
-//   }
-//   .btn-nav {
-//     display: block;
-//   }
-// }
+
+@media (max-width: 59rem) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}

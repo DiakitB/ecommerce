@@ -21,11 +21,11 @@ const Navigation = () => {
   const handleToggle = () => {
     setActive(!isActive);
   };
-
+  // className={`app ${isActive ? "danger" : ""}`}
   // };
   return (
     <Fragment>
-      <div className={`navigation ${isActive ? "nav-open" : ""}`}>
+      <div className={`navigation ${!isActive ? "nav-open" : ""}`}>
         <Link className="logo-container" to="/">
           <CrwnLogo className="logo" />
         </Link>
@@ -61,3 +61,4 @@ const Navigation = () => {
   );
 };
 export default Navigation;
+//

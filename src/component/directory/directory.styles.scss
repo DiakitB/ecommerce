@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-@media (max-width: 59rem) {
+@media (max-width: 31rem) {
   .directory-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -3,12 +3,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 150px;
 }
 @media (max-width: 59rem) {
   .directory-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+    margin-top: 150px;
   }
 }
